@@ -1,6 +1,8 @@
 <?php 
     namespace php\modelo;
 
+    require_once('Endereco.php');
+
     class pessoa{
         private string $cpf;
         private string $nome;
@@ -16,43 +18,19 @@
         }//fim do método
 
         //métodos de acesso de modificação
-        public function getCpf():string{
-            return $this->cpf;
-        }//fim do método getCpf
-
-        public function getNome():string{
+        public function __get(string $nome){
             return $this->nome;
         }//fim do método getNome
 
-        public function getTelefone():string{
-            return $this->telefone;
-        }//fim do método getTelefone
-
-        public function getEndereco():string{
-            return $this->endereco;
-        }//fim do método getEndereco
-
-        public function setCpf(string $cpf):void{
-            $this->cpf = $cpf;
-        }//fim do método setCpf
-
-        public function setNome(string $nome):void{
-            $this->nome = $nome;
-        }//fim do método setCpf
-
-        public function setTelefone(string $telefone):void{
-            $this->telefone = $telefone;
-        }//fim do método setCpf
-
-        public function setEndereco(string $endereco):void{
-            $this->endereco = $endereco;
-        }//fim do método setCpf
-
+        public function __set(string $campo, string $valor):void{
+            $this->campo = $valor;
+        }
+        
         public function imprimir():string{
-            return "<br>CPF: ".$this->getCpf().
-                    "<br>Nome: ".$this->getNome().
-                    "<br>Telefone: ".$this->getTelefone().
-                    "<br>Endereço: ".$this->getEndereco();
+            return "<br>CPF: ".$this->cpf.
+                    "<br>Nome: ".$this->nome.
+                    "<br>Telefone: ".$this->telefone.
+                    "<br>Endereço: ".$this->endereco;
         }
 
     }//fim da classe

@@ -4,6 +4,12 @@
     require_once('Pessoa.php');
     require_once('funcionario.php');
     require_once('cliente.php');
+    require_once('dao/conexao.php');
+
+    use php\modelo\dao\Conexao;//Direcionar o arquivo
+
+    $conexao = new Conexao();
+    $conexao->conectar();
 
 
     $pessoa1 = new Pessoa("1213142124235", "Pedro", "11987452365", "Rua João");
@@ -15,7 +21,9 @@
 
 
     echo $pessoa1->imprimir();
+    echo "<br>";
     echo $funcionario1->imprimir();
+    echo "<br>";
     echo $cliente1->imprimir();
 
 

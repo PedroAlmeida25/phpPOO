@@ -1,12 +1,14 @@
 <?php
+    namespace php\modelo;
+
     class Cliente{
         private string $cpf;
         private string $nome;
         private string $telefone;
         private string $endereco;
-        private date $dataDeNascimento;
+        private string $dataDeNascimento;
 
-        public function __construct(string $cpf, string $nome, string $telefone, string $endereco, date $dataDeNascimento){
+        public function __construct(string $cpf, string $nome, string $telefone, string $endereco, string $dataDeNascimento){
             $this->cpf = $cpf;
             $this->nome = $nome;
             $this->telefone = $telefone;
